@@ -10,49 +10,61 @@
 </head>
 
 <body>
-    <header class="header">
+    <!-- Header Section -->
+    <header class="header" role="banner">
         <h1>My Advanced Blog</h1>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Portfolio</a>
+        <nav class="nav-links" aria-label="Main Navigation">
+            <!-- aria-label to describe the purpose of each link -->
+            <a href="#" aria-label="Go to Home">Home</a>
+            <a href="#" aria-label="Learn more About us">About</a>
+            <a href="#" aria-label="Contact us">Contact</a>
+            <a href="#" aria-label="View our Portfolio">Portfolio</a>
         </nav>
     </header>
 
-    <main class="container mt-5">
+    <!-- Main Section -->
+    <main class="container mt-5" role="main">
         <div class="row">
-            <section class="col-md-8">
+            <!-- aria-label to sections for better navigation -->
+            <!-- Left Section -->
+
+            <section class="col-md-8" aria-labelledby="main-content">
                 <article class="post">
-                    <h2>First Advanced Article Title</h2>
-                    <p>
+                    <!-- aria-describedby to link content to the corresponding description -->
+                    <h3>First Advanced Article Title</h3>
+                    <p id="description1">
                         This is some sample text for the first article. The full content
                         of the article could be displayed here. Feel free to add more
                         content and style it as needed.
                     </p>
-                    <button class="btn btn-primary">Read More</button>
+                    <button class="btn btn-primary" aria-describedby="description1">Read More</button>
                 </article>
+
                 <article class="post">
-                    <h2>Second Advanced Article Title</h2>
-                    <p>
+                    <h3>Second Advanced Article Title</h3>
+                    <p id="description2">
                         This is some sample text for the second article. The full content
                         of the article could be displayed here. Experiment with different
                         layouts and design enhancements.
                     </p>
-                    <button class="btn btn-primary">Read More</button>
+                    <button class="btn btn-primary" aria-describedby="description2">Read More</button>
                 </article>
+
                 <article class="post">
-                    <h2>Third Advanced Article Title</h2>
-                    <p>
+                    <h3>Third Advanced Article Title</h3>
+                    <p id="description3">
                         This is some sample text for the third article. Challenge yourself
                         to add more features and make the blog more interactive and
                         user-friendly.
                     </p>
-                    <button class="btn btn-primary">Read More</button>
+                    <button class="btn btn-primary" aria-describedby="description3">Read More</button>
                 </article>
             </section>
-            <section class="col-md-4">
-                <aside class="sidebar">
+
+            <!-- Right Section -->
+
+            <section class="col-md-4" aria-labelledby="sidebar-content">
+                <aside class="sidebar" role="complementary" aria-labelledby="about-blog">
                     <h3>About the Blog</h3>
                     <p>
                         This blog is more advanced, requiring enhancements and
@@ -61,25 +73,28 @@
                     </p>
                     <h3>Useful Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About the Author</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#" aria-label="Go to Home">Home</a></li>
+                        <li><a href="#" aria-label="About the Author">About the Author</a></li>
+                        <li><a href="#" aria-label="Contact Us">Contact Us</a></li>
+                        <li><a href="#" aria-label="View Portfolio">Portfolio</a></li>
                     </ul>
                 </aside>
-                <aside class="sidebar">
+                <aside class="sidebar" role="complementary" aria-labelledby="recent-posts">
                     <h3>Recent Posts</h3>
                     <ul>
-                        <li><a href="#">How to Improve Your Blog</a></li>
-                        <li><a href="#">Understanding CSS Grid</a></li>
-                        <li><a href="#">10 JavaScript Tips and Tricks</a></li>
+                        <li><a href="#" aria-label="Read about How to Improve Your Blog">How to Improve Your Blog</a>
+                        </li>
+                        <li><a href="#" aria-label="Read about Understanding CSS Grid">Understanding CSS Grid</a></li>
+                        <li><a href="#" aria-label="Read 10 JavaScript Tips and Tricks">10 JavaScript Tips and
+                                Tricks</a></li>
                     </ul>
                 </aside>
             </section>
         </div>
     </main>
 
-    <footer class="footer">
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
         <p>All Rights Reserved © 2024 | Designed by [Your Name]</p>
     </footer>
 
