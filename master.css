@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+h1 {
+  margin: 0;
+}
+
 /* Variables */
 :root {
   --padding20px: 20px;
@@ -16,6 +20,7 @@
   --bg-dark: #f4f4f9;
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-dark: rgba(0, 0, 0, 0.2);
+  --transition: 0.35s;
 }
 
 body {
@@ -64,6 +69,10 @@ body {
 .nav-links a:hover {
   text-decoration: underline;
 }
+
+.menu-icon {
+  display: none;
+}
 /* End Of Header Styles */
 
 /* Start Of Main Styles */
@@ -73,7 +82,7 @@ body {
   padding: var(--padding20px);
   background-color: var(--color-white);
   box-shadow: 0 4px 8px var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition) ease, box-shadow 0.3s ease;
 }
 
 .post:hover {
@@ -153,3 +162,86 @@ body {
   }
 }
 /* End Of Footer Styles */
+
+.back-to-top {
+  position: sticky;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 1rem;
+  background-color: var(--blue-color);
+  bottom: 5rem;
+  left: 96%;
+  opacity: 0.7;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: var(--transition);
+  margin-right: 0.5rem;
+}
+
+.back-to-top:hover {
+  background-color: var(--blue-dark-color);
+}
+
+.back-to-top a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .back-to-top {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 1rem;
+  }
+
+  .header h1 {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .header .nav-links {
+    position: absolute;
+    top: 100%; /* Initially hidden above the viewport */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: var(--blue-color);
+    width: 100%;
+    height: fit-content;
+    z-index: 100;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--color-dark);
+    border-top: 2px solid var(--color-dark);
+    margin: 0;
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  .menu-icon {
+    display: block;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .header .menu-icon:hover {
+    color: var(--text-muted);
+  }
+
+  .header .menu-icon:hover ~ .nav-links {
+    opacity: 1;
+  }
+}
