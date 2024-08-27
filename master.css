@@ -1,3 +1,17 @@
+/*
+ Index 
+
+ 1.Globel Styles
+ 2.Variables
+ 3.Header Styles
+ 4.Main Styles
+ 5.Footer Styles
+ 6.Back To Top Button Styles
+
+*/
+
+/* Start Of Globel Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -6,9 +20,20 @@ h1 {
   margin: 0;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* End Of Globel Styles */
+
 /* Variables */
 :root {
-  --padding10px: 10px;
   --padding20px: 20px;
   --margin20px: 20px;
   --color-white: #ffffff;
@@ -23,16 +48,6 @@ h1 {
   --shadow-dark: rgba(0, 0, 0, 0.2);
   --transition: 0.35s;
   --border-raduis: 4px;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 /* Start Of Header Styles */
